@@ -1,14 +1,17 @@
 <div class="navbar border">
   <%= link_to 'Wikinimous', articles_path, class:"logo" %>
-  <%= link_to 'New article', new_article_path, class:"link" %>
+  <%= link_to 'New article', new_article_path, class:"link-new" %>
 </div>
 
-<div class="container text-center">
+<div class="container">
   <ul>
   <% @articles.each do |article| %>
-    <li>
-      <%= link_to article.title, article_path(article), class: 'link' %>
-      <%= link_to "Delete",
+    <li class='d-flex justify-content-between'>
+      <div class="article-elements d-flex row justify-content-left">
+        <%= link_to article.title, article_path(article), class: 'article-title' %>
+        <%= article.content %>
+      </div>
+      <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe,
               article_path(article),
               method: :delete,
               data: { confirm: "Are you sure you want to delete #{article.title} ?" } %></li>
