@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap/scss/bootstrap";
+
+ .logo {
+   text-decoration: none;
+   color: gray;
+ }
+
+ .link {
+   text-decoration: none;
+   color: rgb(179, 175, 175)
+ }
+
+ .link:hover {
+   color: gray;
+ }
